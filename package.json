@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project ./",
     "start": "ENVIRONMENT=production ts-node ./src/index.ts",
-    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "dev": "ENVIRONMENT=dev nodemon --exec ts-node ./src/index.ts",
     "lint": "./node_modules/.bin/eslint src/**/*.ts",
     "lint:fix": "./node_modules/.bin/eslint src/**/*.ts --fix",
     "test": "jest"
