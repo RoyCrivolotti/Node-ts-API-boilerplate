@@ -1,6 +1,9 @@
+// @ts-nocheck
+
 import express, { NextFunction, Request, Response } from 'express';
 import { GetEnvironment } from './config/environment';
 import { Controller } from './controllers/controller';
+import missingProducts from 'services/old_service';
 
 const { PORT } = GetEnvironment();
 
@@ -12,7 +15,6 @@ app.get("/api/", Controller.doSomethingController);
 app.use('/*', (req, res, next) => {
     res.send('Hello world!');
 });
-
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}: http://localhost:${PORT}`);

@@ -1,4 +1,4 @@
-import { Service } from 'services/service';
+import { Service } from 'services/old_service';
 import { Client } from 'clients/client';
 
 jest.mock('clients/client');
@@ -11,10 +11,8 @@ test('doSomethingService - success', async () => {
     const mockId = '123';
     const mockResult = 'result';
 
-    // Cast the Client.doSomethingClient to a jest.Mock
     const mock = Client.doSomethingClient as jest.Mock;
 
-    // Mock the function
     mock.mockReturnValueOnce(mockResult);
 
     const result = await Service.doSomethingService(mockId);
